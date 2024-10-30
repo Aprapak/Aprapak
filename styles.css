@@ -1,0 +1,145 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5dc; /* Light beige background for an earthy feel */
+    color: #4d4d33; /* Dark greenish-brown text */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #d9e8d5; /* Soft green background */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #b3c3b3;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #d9e8d5;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #2e4d2b; /* Dark green for links */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #a3c2a1; /* Light green background on hover */
+    color: #fff; /* White text on hover */
+    border-radius: 5px;
+}
+
+/* Section Styles */
+section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #b3c3b3; /* Light green border */
+    border-radius: 5px;
+    background-color: #eae7d4; /* Light beige for sections */
+}
+
+/* Heading Styles */
+h1, h2 {
+    color: #3c4a3e; /* Darker green for headings */
+}
+
+/* Link Styles */
+a:link, a:visited {
+    text-decoration: none;
+    color: #2e4d2b; /* Dark green for links */
+}
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #a3c2a1; /* Lighter green for hovered links */
+}
+
+/* Additional styles for lists */
+ul {
+    list-style-type: disc; /* Bulleted list style */
+    padding-left: 20px; /* Padding for list */
+}
+
+/* Blockquote Styles */
+blockquote {
+    font-style: italic;
+    color: #555; /* Gray for blockquote */
+    border-left: 2px solid #8f9c84; /* Soft green border */
+    padding-left: 10px;
+    margin: 10px 0;
+}
+
+/* Image Hover Effect */
+#myImage {
+    transition: transform 0.3s ease; /* Smooth transition effect */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+#myImage:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form p {
+    margin: 10px 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b3c3b3;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4d4d33;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #3c4a3e;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #d9e8d5;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 2px solid #b3c3b3;
+}
