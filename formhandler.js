@@ -39,3 +39,4 @@ window.onload = function() {
         alert('All input has been cleared.');
     });
 };
+
