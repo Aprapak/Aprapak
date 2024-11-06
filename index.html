@@ -3,158 +3,202 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Aathithyan Prapakaran Website</title>
-   <link rel="stylesheet" href="styles.css"> <!-- Link to my CSS -->
+   <title>Aathithyan Prapakaran Portfolio</title>
+   
+   <!-- Link to Google Fonts for Montserrat for clean typography -->
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+   
+   <!-- Link to CSS for styling -->
+   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <!-- Main Header -->
+
+   <!-- Header Section -->
+   <!-- Contains the name and a button to toggle the navigation menu -->
    <header>
-       <h1>Hello, I'm Aathithyan Prapakaran!</h1>
+       <div class="header-left">
+           <h1>Aathithyan Prapakaran</h1>
+       </div>
+       <nav class="header-right">
+           <button id="menuButton">☰ Menu</button> <!-- Menu button for navigation -->
+       </nav>
    </header>
 
-   <!-- Navigation Bar -->
-   <nav>
+   <!-- Sidebar Navigation Menu -->
+   <!-- The menu is initially hidden and slides out when the button is clicked -->
+   <aside id="sidebarMenu">
        <ul>
-           <li><a href="#welcome">Welcome</a></li>
-           <li><a href="#education">Education</a></li>
-           <li><a href="#program">Program & Courses</a></li>
-           <li><a href="#awards">Awards & Certifications</a></li>
-           <li><a href="#activities">Activities</a></li>
-           <li><a href="#contact">Contact Me</a></li>
+           <li><a href="#" data-page="home">Home</a></li>
+           <li><a href="#" data-page="education">Education</a></li>
+           <li><a href="#" data-page="program">Program & Courses</a></li>
+           <li><a href="#" data-page="awards">Awards & Certifications</a></li>
+           <li><a href="#" data-page="hobbies">Hobbies & Interests</a></li>
+           <li><a href="#" data-page="contact">Contact Me</a></li>
        </ul>
-   </nav>
+   </aside>
 
-   <!-- Welcome Section with ID for Navigation -->
-   <section id="welcome">
-       <h2>Welcome!</h2>
-       <button id="nameButton">Click me to enter your name!</button>
-       <p id="greetingMessage"></p>
-       <img id="myImage" src="image/myimage.jpeg" alt="Aathithyan Prapakaran" style="width: 200px; cursor: pointer;"/>
-   </section>
+   <!-- Main Content Area -->
+   <!-- Contains individual sections for each part of the portfolio, only one section is visible at a time -->
 
-   <!-- Education Section with ID for Navigation -->
-   <section id="education">
-       <h2>Education</h2>
-       <ul>
-           <li><strong>High School:</strong> Maple High School, 2017 - 2021</li>
-           <li><strong>University:</strong> Toronto Metropolitan University, 2021 - 2025</li>
-       </ul>
-   </section>
+   <div class="pages">
 
-   <!-- Program and Courses Section with ID for Navigation -->
-   <section id="program">
-       <h2>Program and Courses</h2>
-       <p>
-           I am currently pursuing a degree in Business Technology Management. My coursework includes a range of subjects designed to build expertise in both business and technology. Below is a list of my current courses:
-       </p>
-       <ul>
-           <li>ITM780 011 - Web Design and Management</li>
-           <li><strong>ENT101 191/201/211 - Building An Entrepreneurial Mindset</strong></li>
-           <li>ITM707 - Strategy, Management, and Acquisition</li>
-           <li>CCRM102 V10 - Introduction to Criminology</li>
-           <li>CITM750 D10 - IS Project Management</li>
-       </ul>
-       <p>
-           <strong>Favorite Course:</strong> ENT101 191/201/211 - Building An Entrepreneurial Mindset
-           <br>
-           This course stands out as the most valuable to me because it develops a crucial entrepreneurial mindset, essential for future career success. It encourages creative and strategic thinking, which is vital for tackling business challenges effectively.
-       </p>
-   </section>
+       <!-- Home Page Section -->
+       <!-- Includes a profile picture, About Me description, and Projects & Gallery section -->
+       <section id="home" class="page active">
+           <div class="content">
 
-   <!-- Educational Awards and Certifications Section with ID for Navigation -->
-   <section id="awards">
-       <h2>Educational Awards and Certifications</h2>
-       <ul>
-           <li>Certificates in Excel</li>
-           <li>Google Certifications</li>
-           <li>Digital Machine Learning</li>
-       </ul>
-   </section>
+               <!-- Profile Image Section -->
+               <div class="left">
+                   <img id="myImage" src="image/myimage.jpeg" alt="Aathithyan Prapakaran" />
+               </div>
 
-   <!-- Extra-Curricular Activities Section with ID for Navigation -->
-   <section id="activities">
-       <h2>Extra-Curricular Activities</h2>
-       <ul>
-           <li>Gym</li>
-           <li>Volleyball</li>
-           <li>Gaming</li>
-           <li>Crypto Investing</li>
-           <li>Stock Market Investing</li>
-           <li><a href="https://www.youtube.com/user/marquesbrownlee" target="_blank">YouTube</a> - This is a tech YouTuber I like to watch to keep updated on the latest tech finds!</li>
-       </ul>
-   </section>
+               <!-- About Me and Projects Section -->
+               <div class="right">
+                   <!-- Brief introduction and background description -->
+                   <div class="description-box">
+                       <p><strong>4th Year | Business Technology Management Student @ TRSM | Customer Service Representative @ BMO</strong></p>
+                       <p class="full-description">
+                           Hello! I’m Aathithyan Prapakaran, a driven and versatile Business Technology Management student in my fourth year at the Ted Rogers School of Management. 
+                           Currently, I’m also gaining hands-on experience as a Customer Service Representative at BMO. My academic and professional journey has equipped me 
+                           with a strong foundation in business strategy, technology integration, and problem-solving skills.
+                           <br><br>
+                           With a keen interest in marketing, product management, sales, and strategic planning, I am continuously exploring new opportunities to grow and develop 
+                           in these fields. I am passionate about building connections, adapting to new challenges, and making a positive impact through collaboration 
+                           and effective communication.
+                           <br><br>
+                           In my free time, I enjoy staying active with volleyball, hitting the gym, and exploring the world of investing. Welcome to my portfolio, where you’ll 
+                           find a showcase of my skills, projects, and achievements!
+                       </p>
+                   </div>
 
-   <!-- LinkedIn Section -->
-   <section>
-       <h2>Connect with Me</h2>
-       <p>
-           <a href="https://www.linkedin.com/in/aathithyan-prapakaran-391294224/" target="_blank">LinkedIn Profile</a>
-       </p>
-   </section>
+                   <!-- Projects & Gallery Section -->
+                   <div class="projects-gallery">
+                       <h2>Projects & Gallery</h2>
+                       <div class="gallery">
+                           <!-- Volleyball Image -->
+                           <div class="gallery-item">
+                               <img src="image/volleyball.jpg" alt="Playing Volleyball">
+                               <p>Volleyball - Team moments and sportsmanship</p>
+                           </div>
 
-   <!-- Contact Section with ID for Navigation -->
-   <section id="contact">
-       <h2>Contact Me</h2>
-       <form id="contactForm">
-           <p>
-               <label for="username">Name:</label>
-               <input type="text" id="username" name="username">
-           </p>
-           <p>
-               <label for="email">Email:</label>
-               <input type="email" id="email" name="email">
-           </p>
-           <p>
-               <label for="phone">Phone Number:</label>
-               <input type="tel" id="phone" name="phone">
-           </p>
-           <p>
-               <label>Are you interested in collaboration?</label>
+                           <!-- Gym Image -->
+                           <div class="gallery-item">
+                               <img src="image/gym.jpg" alt="At the Gym">
+                               <p>Gym - Dedication to fitness and well-being</p>
+                           </div>
+
+                           <!-- Bank Image -->
+                           <div class="gallery-item">
+                               <img src="image/bank.jpg" alt="Working at BMO">
+                               <p>Bank - Professional experience at BMO</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+       <!-- Education Section -->
+       <!-- Summarizes educational background -->
+       <section id="education" class="page">
+           <h2>Education</h2>
+           <ul>
+               <li><strong>High School:</strong> Maple High School, 2017 - 2021</li>
+               <li><strong>University:</strong> Toronto Metropolitan University, 2021 - 2025</li>
+               <li><strong>Program:</strong> Business Technology Management</li>
+           </ul>
+       </section>
+
+       <!-- Program & Courses Section -->
+       <!-- Lists relevant courses being taken in the Business Technology Management program -->
+       <section id="program" class="page">
+           <h2>Program and Courses</h2>
+           <p>I am currently pursuing a degree in Business Technology Management...</p>
+           <ul>
+               <li>ITM780 011 - Web Design and Management</li>
+               <li>ENT101 191/201/211 - Building An Entrepreneurial Mindset</li>
+               <li>ITM707 - Strategy, Management, and Acquisition</li>
+               <li>CCRM102 V10 - Introduction to Criminology</li>
+               <li>CITM750 D10 - IS Project Management</li>
+           </ul>
+       </section>
+
+       <!-- Awards & Certifications Section -->
+       <!-- Highlights certifications and notable achievements -->
+       <section id="awards" class="page">
+           <h2>Awards and Certifications</h2>
+           <ul>
+               <li>Certificate in Excel</li>
+               <li>Google Analytics Certification</li>
+               <li>Digital Machine Learning Certificate</li>
+           </ul>
+       </section>
+
+       <!-- Hobbies & Interests Section -->
+       <!-- Displays personal interests and favorite YouTube channels -->
+       <section id="hobbies" class="page">
+           <h2>Hobbies & Interests</h2>
+           <ul>
+               <li>Gym</li>
+               <li>Volleyball</li>
+               <li>Gaming</li>
+               <li>Crypto Investing</li>
+               <li>Stock Market Investing</li>
+               <li><a href="https://www.youtube.com/user/marquesbrownlee" target="_blank">Marques Brownlee on YouTube</a></li>
+               <li><a href="https://www.youtube.com/@marktilbury" target="_blank">Mark Tilbury on YouTube</a></li>
+           </ul>
+       </section>
+
+       <!-- Contact Section -->
+       <!-- Contains a form for visitors to reach out, as well as a LinkedIn link -->
+       <section id="contact" class="page">
+           <h2>Contact Me</h2>
+           <p>Connect with me on <a href="https://www.linkedin.com/in/aathithyan-prapakaran-391294224/" target="_blank">LinkedIn</a>.</p>
+           <form id="contactForm">
+               <p><label for="username">Name:</label>
+               <input type="text" id="username" name="username"></p>
+
+               <p><label for="email">Email:</label>
+               <input type="email" id="email" name="email"></p>
+
+               <p><label for="phone">Phone Number:</label>
+               <input type="tel" id="phone" name="phone"></p>
+
+               <p><label>Interested in Collaboration?</label>
                <input type="radio" id="yes" name="collab" value="Yes">
                <label for="yes">Yes</label>
                <input type="radio" id="no" name="collab" value="No">
-               <label for="no">No</label>
-           </p>
-           <p>
-               <label for="interest">Select your area of interest:</label>
+               <label for="no">No</label></p>
+
+               <p><label for="interest">Area of Interest:</label>
                <select id="interest" name="interest">
                    <option value="web">Web Design</option>
                    <option value="data">Data Analysis</option>
                    <option value="marketing">Digital Marketing</option>
                    <option value="other">Other</option>
-               </select>
-           </p>
-           <p>
-               <label>Preferred Contact Time:</label>
+               </select></p>
+
+               <p><label>Preferred Contact Time:</label>
                <input type="checkbox" id="morning" name="contactTime" value="Morning">
                <label for="morning">Morning</label>
                <input type="checkbox" id="afternoon" name="contactTime" value="Afternoon">
                <label for="afternoon">Afternoon</label>
                <input type="checkbox" id="evening" name="contactTime" value="Evening">
-               <label for="evening">Evening</label>
-           </p>
-           <p>
-               <label for="subscribe">Subscribe to Newsletter:</label>
-               <input type="checkbox" id="subscribe" name="subscribe">
-           </p>
-           <p>
-               <label for="message">Message:</label>
-               <textarea id="message" name="message" rows="4" cols="50"></textarea>
-           </p>
-           <p>
-               <input type="submit" value="Submit">
-               <input type="reset" value="Clear">
-           </p>
-       </form>
-   </section>
+               <label for="evening">Evening</label></p>
 
-   <!-- Footer -->
-   <footer>
-       <p>&copy; 2024 Aathithyan Prapakaran. All rights reserved.</p>
-   </footer>
+               <p><label for="subscribe">Subscribe to Newsletter:</label>
+               <input type="checkbox" id="subscribe" name="subscribe"></p>
 
-   <!-- External JavaScript Files -->
+               <p><label for="message">Message:</label>
+               <textarea id="message" name="message" rows="4" cols="50"></textarea></p>
+
+               <p><input type="submit" value="Submit">
+               <input type="reset" value="Clear"></p>
+           </form>
+       </section>
+   </div>
+
+   <!-- External JavaScript File -->
    <script src="script.js"></script>
-   <script src="formHandler.js"></script>
 </body>
 </html>

@@ -1,41 +1,29 @@
-// Wait until the DOM is fully loaded
-window.onload = function() {
-    const form = document.getElementById('contactForm');
+// Form Submission Handling
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the form from submitting the traditional way
 
-    // Handle form submission
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+    // Collect form data
+    const formData = {
+        name: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        collaboration: document.querySelector('input[name="collab"]:checked')?.value || '',
+        interest: document.getElementById('interest').value,
+        contactTime: Array.from(document.querySelectorAll('input[name="contactTime"]:checked')).map(el => el.value),
+        subscribe: document.getElementById('subscribe').checked,
+        message: document.getElementById('message').value,
+    };
 
-        // Get form values
-        const username = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const collab = document.querySelector('input[name="collab"]:checked')?.value || '';
-        const interest = document.getElementById('interest').value;
-        const subscribe = document.getElementById('subscribe').checked;
-        const message = document.getElementById('message').value;
-        
-        // Get selected contact times
-        const contactTimes = Array.from(document.querySelectorAll('input[name="contactTime"]:checked'))
-            .map(input => input.value);
+    // Save form data to local storage for persistence
+    localStorage.setItem('contactFormData', JSON.stringify(formData));
 
-        // Save form data to local storage
-        localStorage.setItem('username', username);
-        localStorage.setItem('email', email);
-        localStorage.setItem('phone', phone);
-        localStorage.setItem('collab', collab);
-        localStorage.setItem('interest', interest);
-        localStorage.setItem('subscribe', subscribe);
-        localStorage.setItem('contactTimes', JSON.stringify(contactTimes));
-        localStorage.setItem('message', message);
+    // Alert user and log form data to console
+    alert('Form submitted successfully!');
+    console.log('Form Data:', formData); // Output the form data in the console for debugging
+});
 
-        alert('Your information has been saved!');
-        form.reset(); // Clear the form
-    });
-
-    // Handle form reset
-    form.addEventListener('reset', function() {
-        localStorage.clear(); // Clear local storage
-        alert('All input has been cleared.');
-    });
-};
+// Form Reset Handling
+document.getElementById('contactForm').addEventListener('reset', function () {
+    localStorage.removeItem('contactFormData'); // Clear data from local storage
+    alert('Form cleared and local storage reset.');
+});

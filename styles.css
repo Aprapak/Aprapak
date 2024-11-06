@@ -1,145 +1,241 @@
-/* General Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f5f5dc; /* Light beige background for an earthy feel */
-    color: #4d4d33; /* Dark greenish-brown text */
+/* General Reset */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header Styles */
+/* Body and Font */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Header */
 header {
-    background-color: #d9e8d5; /* Soft green background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #b3c3b3;
+    background-color: #000;
+    color: #fff;
 }
 
-/* Navigation Bar Styles */
-nav {
-    background-color: #d9e8d5;
-    padding: 10px 0;
+.header-left h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.header-right button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the sidebar menu */
+}
+
+/* Sidebar Menu */
+#sidebarMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebarMenu.visible {
+    transform: translateX(0);
+}
+
+#sidebarMenu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebarMenu ul li {
+    margin: 20px 0;
+}
+
+#sidebarMenu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+#sidebarMenu ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Pages Layout */
+.pages {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Individual Page Style */
+.page {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    padding: 40px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Home and Main Content Layout */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Left Section: Profile Image */
+.left img {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+/* Right Section: About Me, Projects & Gallery */
+.right .description-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.right .description-box p.full-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Projects & Gallery Section */
+.projects-gallery {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects-gallery h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Gallery Layout */
+.gallery {
     display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
 }
 
-nav ul li {
-    margin: 0 15px;
+/* Gallery Item Styling */
+.gallery-item {
+    width: 180px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-nav ul li a {
-    color: #2e4d2b; /* Dark green for links */
+.gallery-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 8px;
+}
+
+/* Link Hover Effects */
+a {
+    color: #333;
     text-decoration: none;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #a3c2a1; /* Light green background on hover */
-    color: #fff; /* White text on hover */
-    border-radius: 5px;
-}
-
-/* Section Styles */
-section {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #b3c3b3; /* Light green border */
-    border-radius: 5px;
-    background-color: #eae7d4; /* Light beige for sections */
-}
-
-/* Heading Styles */
-h1, h2 {
-    color: #3c4a3e; /* Darker green for headings */
-}
-
-/* Link Styles */
-a:link, a:visited {
-    text-decoration: none;
-    color: #2e4d2b; /* Dark green for links */
-}
 a:hover {
-    text-decoration: underline; /* Underline on hover */
-    color: #a3c2a1; /* Lighter green for hovered links */
+    color: #4CAF50;
 }
 
-/* Additional styles for lists */
-ul {
-    list-style-type: disc; /* Bulleted list style */
-    padding-left: 20px; /* Padding for list */
-}
-
-/* Blockquote Styles */
-blockquote {
-    font-style: italic;
-    color: #555; /* Gray for blockquote */
-    border-left: 2px solid #8f9c84; /* Soft green border */
-    padding-left: 10px;
-    margin: 10px 0;
-}
-
-/* Image Hover Effect */
-#myImage {
-    transition: transform 0.3s ease; /* Smooth transition effect */
-    cursor: pointer; /* Changes cursor to pointer on hover */
-}
-
-#myImage:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
+/* Form Styling */
 form p {
-    margin: 10px 0;
+    margin-bottom: 15px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea,
-select {
+form label {
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea,
+form select {
     width: 100%;
     padding: 8px;
-    border: 1px solid #b3c3b3;
-    border-radius: 5px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
-input[type="submit"],
-input[type="reset"] {
-    background-color: #4d4d33;
+form input[type="submit"],
+form input[type="reset"] {
+    background-color: #4CAF50;
     color: #fff;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
-    width: 100px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-    background-color: #3c4a3e;
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+    background-color: #45a049;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #d9e8d5;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    border-top: 2px solid #b3c3b3;
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
 }
