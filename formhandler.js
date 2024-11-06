@@ -17,13 +17,17 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     // Save form data to local storage for persistence
     localStorage.setItem('contactFormData', JSON.stringify(formData));
 
-    // Alert user and log form data to console
-    alert('Form submitted successfully!');
+    // Alert the user and log form data to console
+    alert('Your information has been saved!');
     console.log('Form Data:', formData); // Output the form data in the console for debugging
+
+    // Clear the form after submission
+    document.getElementById('contactForm').reset();
 });
 
 // Form Reset Handling
 document.getElementById('contactForm').addEventListener('reset', function () {
-    localStorage.removeItem('contactFormData'); // Clear data from local storage
-    alert('Form cleared and local storage reset.');
+    // Clear data from local storage
+    localStorage.removeItem('contactFormData');
+    alert('All input has been cleared.');
 });
